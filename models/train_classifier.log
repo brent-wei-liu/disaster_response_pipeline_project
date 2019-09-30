@@ -1,0 +1,101 @@
+[nltk_data] Downloading package punkt to
+[nltk_data]     /home/brentweiliu/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package wordnet to
+[nltk_data]     /home/brentweiliu/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/brentweiliu/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+Loading data...
+    DATABASE: data/DisasterResponse.db
+['data/DisasterResponse.db']
+Building model...
+Training model...
+Fitting 3 folds for each of 4 candidates, totalling 12 fits
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[CV] clf__estimator__C=1.0, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=1.0, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.351, total=  11.9s
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:   11.9s remaining:    0.0s
+[CV] clf__estimator__C=1.0, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=1.0, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.349, total=  11.8s
+[Parallel(n_jobs=1)]: Done   2 out of   2 | elapsed:   23.7s remaining:    0.0s
+[CV] clf__estimator__C=1.0, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=1.0, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.364, total=  11.9s
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:   35.6s remaining:    0.0s
+[CV] clf__estimator__C=1.0, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=1.0, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.232, total=  15.7s
+[Parallel(n_jobs=1)]: Done   4 out of   4 | elapsed:   51.3s remaining:    0.0s
+[CV] clf__estimator__C=1.0, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=1.0, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.192, total=  15.8s
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:  1.1min remaining:    0.0s
+[CV] clf__estimator__C=1.0, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=1.0, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.225, total=  15.8s
+[Parallel(n_jobs=1)]: Done   6 out of   6 | elapsed:  1.4min remaining:    0.0s
+[CV] clf__estimator__C=10, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=10, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.419, total=  27.1s
+[Parallel(n_jobs=1)]: Done   7 out of   7 | elapsed:  1.8min remaining:    0.0s
+[CV] clf__estimator__C=10, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=10, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.430, total=  38.2s
+[Parallel(n_jobs=1)]: Done   8 out of   8 | elapsed:  2.5min remaining:    0.0s
+[CV] clf__estimator__C=10, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=10, clf__estimator__penalty=l1, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.412, total= 1.0min
+[Parallel(n_jobs=1)]: Done   9 out of   9 | elapsed:  3.5min remaining:    0.0s
+[CV] clf__estimator__C=10, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=10, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.354, total=  19.4s
+[CV] clf__estimator__C=10, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=10, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.374, total=  19.8s
+[CV] clf__estimator__C=10, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1 
+[CV]  clf__estimator__C=10, clf__estimator__penalty=l2, clf__estimator__random_state=25, clf__estimator__solver=liblinear, tfidf__use_idf=False, vect__min_df=1, score=0.397, total=  19.2s
+[Parallel(n_jobs=1)]: Done  12 out of  12 | elapsed:  4.5min finished
+Best params:
+{'clf__estimator__C': 10, 'clf__estimator__penalty': 'l1', 'clf__estimator__random_state': 25, 'clf__estimator__solver': 'liblinear', 'tfidf__use_idf': False, 'vect__min_df': 1}
+Evaluating model...
+                        Accuracy  Precision    Recall        F1
+related                 0.817134   0.870366  0.893172  0.881621
+request                 0.891471   0.716398  0.600902  0.653587
+offer                   0.995774   0.000000  0.000000  0.000000
+aid_related             0.747215   0.699704  0.667451  0.683197
+medical_help            0.920476   0.524823  0.345794  0.416901
+medical_products        0.950442   0.522843  0.385768  0.443966
+search_and_rescue       0.972916   0.414286  0.224806  0.291457
+security                0.974068   0.200000  0.095238  0.129032
+military                0.965232   0.548673  0.322917  0.406557
+water                   0.959662   0.680921  0.646875  0.663462
+food                    0.946984   0.777164  0.731369  0.753571
+shelter                 0.942950   0.699746  0.605727  0.649351
+clothing                0.987706   0.581818  0.438356  0.500000
+money                   0.976950   0.434211  0.300000  0.354839
+missing_people          0.987899   0.458333  0.180328  0.258824
+refugees                0.963312   0.441441  0.275281  0.339100
+death                   0.963888   0.607955  0.473451  0.532338
+other_aid               0.849405   0.353201  0.245776  0.289855
+infrastructure_related  0.917787   0.315789  0.188034  0.235714
+transport               0.948713   0.445860  0.280000  0.343980
+buildings               0.955628   0.570093  0.467433  0.513684
+electricity             0.980023   0.533333  0.366972  0.434783
+tools                   0.994237   0.142857  0.040000  0.062500
+hospitals               0.986554   0.421053  0.119403  0.186047
+shops                   0.994814   0.000000  0.000000  0.000000
+aid_centers             0.984441   0.300000  0.082192  0.129032
+other_infrastructure    0.944487   0.243697  0.127193  0.167147
+weather_related         0.868229   0.785714  0.726272  0.754825
+floods                  0.946792   0.717949  0.586047  0.645327
+storm                   0.935267   0.689655  0.597610  0.640342
+fire                    0.990396   0.434783  0.212766  0.285714
+earthquake              0.967922   0.880096  0.758264  0.814650
+cold                    0.983096   0.637681  0.411215  0.500000
+other_weather           0.940453   0.364706  0.234848  0.285714
+direct_report           0.849789   0.619165  0.516393  0.563128
+        Accuracy  Precision     Recall         F1
+count  35.000000  35.000000  35.000000  35.000000
+mean    0.942918   0.503838   0.375653   0.423150
+std     0.056245   0.221672   0.238732   0.236221
+min     0.747215   0.000000   0.000000   0.000000
+25%     0.937860   0.389496   0.200400   0.272269
+50%     0.959662   0.524823   0.345794   0.416901
+75%     0.981560   0.685288   0.591828   0.642834
+max     0.995774   0.880096   0.893172   0.881621
+Saving model...
+    MODEL: models/classifier.pkl
+Trained model saved!

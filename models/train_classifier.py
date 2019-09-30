@@ -15,6 +15,7 @@ nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('stopwords')
 
+from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
@@ -70,6 +71,22 @@ def tokenize(text):
     
     return stemmed
 
+def performance_metric(y_true, y_pred):
+    """Calculate median F1 score for all of the output classifiers
+        Args:
+        y_true: array. Array containing actual labels.
+        y_pred: array. Array containing predicted labels.
+        Returns:
+        score: float. Median F1 score for all of the output classifiers
+        """
+    f1_list = []
+    for i in range(np.shape(y_pred)[1]):
+        f1 = f1_score(np.array(y_true)[:, i], y_pred[:, i])
+        f1_list.append(f1)
+        
+    score = np.median(f1_list)
+    return score
+
 
 def build_model():
     """Build a machine learning pipeline
@@ -78,15 +95,33 @@ def build_model():
     None
        
     Returns:
-    pipeline: the machine learning pipeline
+    cv: gridsearchcv object. Gridsearchcv object that transforms the data, creates the 
+    model object and finds the optimal model parameters.
     """
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer = tokenize, min_df=1)),
         ('tfidf', TfidfTransformer(use_idf=False)),
-        ('clf', MultiOutputClassifier(LogisticRegression(solver='liblinear', penalty='l1', C=10))),
+        ('clf', MultiOutputClassifier(LogisticRegression())),
     ])
 
-    return pipeline
+    parameters = {
+        'vect__min_df': [1],
+        'tfidf__use_idf':[ False],
+    #   'clf__estimator__multi_class': ['ovr']
+        'clf__estimator__random_state': [25],
+        'clf__estimator__C': [1.0, 10],
+        'clf__estimator__penalty':["l1", "l2"],
+        #'clf__estimator__solver':['lbfgs','liblinear']
+        'clf__estimator__solver':['liblinear'],
+    }
+
+    # Create scorer
+    scorer = make_scorer(performance_metric)
+    
+    # Create grid search object
+    cv = GridSearchCV(pipeline, param_grid = parameters, scoring = scorer, verbose = 10,  n_jobs = 1)
+    return cv
+
 
 def get_eval_metrics(actual, predicted, col_names):
     """Calculate evaluation metrics for ML model
@@ -161,13 +196,17 @@ def main():
         model = build_model()
         
         print('Training model...')
+        np.random.seed(71)
         model.fit(X_train, Y_train)
-        
+       
+        # Parameters for best mean test score
+        print("Best params:\n%s" % model.best_params_)
+ 
         print('Evaluating model...')
         evaluate_model(model, X_test, Y_test, category_names)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
-        save_model(model, model_filepath)
+        save_model(model.best_estimator_, model_filepath)
 
         print('Trained model saved!')
 
