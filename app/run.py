@@ -42,6 +42,11 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+
+    # Calculate proportion of each category with label = 1
+    cat_props = df.drop(['message', 'original', 'genre'], axis = 1).sum()/len(df)
+    cat_props = cat_props.sort_values(ascending = False)
+    cat_names = list(cat_props.index)
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
@@ -61,6 +66,25 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=cat_names,
+                    y=cat_props
+                )
+            ],
+
+            'layout': {
+                'title': 'Proportion of Messages by Category',
+                'yaxis': {
+                    'title': "Proportion"
+                },
+                'xaxis': {
+                    'title': "Category",
+                    'tickangle': -45
                 }
             }
         }
@@ -93,7 +117,7 @@ def go():
 
 
 def main():
-    app.run(host='0.0.0.0', port=3001, debug=True)
+    app.run(host='0.0.0.0', port=9999, debug=True)
 
 
 if __name__ == '__main__':

@@ -38,6 +38,7 @@ def load_data(database_filepath):
     # load data from database
     engine = create_engine('sqlite:///%s' % database_filepath)
     df = pd.read_sql_table(database_filepath, engine)
+    print (engine.table_names())
 
     # Create X and Y datasets
     X = df['message']
