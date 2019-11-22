@@ -1,0 +1,19 @@
+name: disaster
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7.5
+  - pip=19.3.1=py37_0
+  - pandas=0.25.3
+  - scikit-learn=0.21.2
+  - plotly=4.3.0
+  - nltk
+  - flask
+  - sqlalchemy
+  - numpy
+  - jupyter
+  - matplotlib
+  - pip:
+    - twitter
+    - googlemaps
